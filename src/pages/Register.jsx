@@ -3,7 +3,7 @@ import classes from "../assets/css/login.module.css";
 import maintenanceImage from "../assets/images/loginImage.svg";
  // Ensure your schema is defined here
 import * as Yup from "yup";
-
+import { toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useFormik } from "formik";
@@ -14,7 +14,9 @@ export const Register = () => {
 
   const onSubmitFunction = (data) => {
     console.log(data);
+    
     navigate("/home");
+    toast.success("مرحبا بك في منظومة الصيانة")
   };
 
   let validate = Yup.object().shape({
